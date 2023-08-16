@@ -17,20 +17,31 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "folke/neoconf.nvim",   cmd = "Neoconf" },
+  { "folke/neoconf.nvim",        cmd = "Neoconf" },
   "folke/neodev.nvim",
   "nvim-lualine/lualine.nvim",
   "mbbill/undotree",
   "lewis6991/gitsigns.nvim",
   "nvim-tree/nvim-web-devicons",
+  "MunifTanjim/prettier.nvim",
+  "nvim-tree/nvim-tree.lua",
+  "RRethy/vim-illuminate",
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { 'ThePrimeagen/harpoon', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'ThePrimeagen/harpoon',      dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'startup-nvim/startup.nvim', dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } },
   "prichrd/netrw.nvim",
   "tpope/vim-fugitive",
+  "ThePrimeagen/vim-be-good",
+  "numToStr/Comment.nvim",
   "savq/melange-nvim", -- theme
   {
     "nvim-treesitter/nvim-treesitter",
@@ -43,7 +54,7 @@ require("lazy").setup({
     dependencies = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
-      {                          -- Optional
+      {                            -- Optional
         'williamboman/mason.nvim',
         build = function()
           pcall(vim.cmd, 'MasonUpdate')
@@ -52,9 +63,9 @@ require("lazy").setup({
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },   -- Required
+      { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },   -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     }
   }
 })
