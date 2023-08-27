@@ -17,7 +17,7 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "folke/neoconf.nvim",        cmd = "Neoconf" },
+  { "folke/neoconf.nvim",   cmd = "Neoconf" },
   "folke/neodev.nvim",
   "nvim-lualine/lualine.nvim",
   "mbbill/undotree",
@@ -36,8 +36,8 @@ require("lazy").setup({
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { 'ThePrimeagen/harpoon',      dependencies = { 'nvim-lua/plenary.nvim' } },
-  { 'startup-nvim/startup.nvim', dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } },
+  { 'ThePrimeagen/harpoon', dependencies = { 'nvim-lua/plenary.nvim' } },
+  -- { 'startup-nvim/startup.nvim', dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } },
   "prichrd/netrw.nvim",
   "tpope/vim-fugitive",
   "ThePrimeagen/vim-be-good",
