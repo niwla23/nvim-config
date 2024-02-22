@@ -67,5 +67,15 @@ require("lazy").setup({
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
       { 'L3MON4D3/LuaSnip' },     -- Required
     }
+  },
+
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      -- 'stevearc/dressing.nvim',   -- optional for vim.ui.select
+    },
+    config = true,
   }
 })
