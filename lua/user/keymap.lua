@@ -1,11 +1,3 @@
-local builtin = require('telescope.builtin')
-
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-f>', function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
-
-vim.keymap.set('n', '<leader>fe', vim.cmd.Ex)             -- open explorer
 vim.keymap.set({ "n", "v", "i" }, '<C-s>', vim.cmd.write) -- save file
 vim.keymap.set("n", "<leader>o", 'o<Esc>0"_D')
 vim.keymap.set("n", "<leader>O", 'O<Esc>0"_D')
