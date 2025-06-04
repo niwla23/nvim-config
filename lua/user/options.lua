@@ -36,7 +36,7 @@ vim.opt.wrap = false              -- display lines as one long
 vim.opt.scrolloff = 8             -- min lines arround cursor
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-vim.api.nvim_exec('language en_US', true)
+-- vim.api.nvim_exec('language en_US', true)
 
 vim.opt.termguicolors = true
 vim.cmd.colorscheme 'melange'

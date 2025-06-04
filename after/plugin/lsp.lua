@@ -1,7 +1,7 @@
 local lsp0 = require('lsp-zero').preset({})
 
 lsp0.on_attach(function(client, bufnr)
-  lsp0.default_keymaps({ buffer = bufnr })
+  lsp0.default_keymaps({ buffer = bufnr, preserve_mappings = false })
   lsp0.buffer_autoformat()
 end)
 
@@ -15,7 +15,7 @@ lsp0.set_sign_icons({
 })
 
 lsp0.ensure_installed({
-  'tsserver',
+  'ts_ls',
   'eslint',
   'tailwindcss',
   'lua_ls',
@@ -55,6 +55,15 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 lsp0.setup()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
 
 
 local cmp = require('cmp')
