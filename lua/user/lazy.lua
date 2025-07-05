@@ -48,26 +48,26 @@ require("lazy").setup({
     build = ":TSUpdate",
   },
 
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {                            -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
-    }
-  },
+  -- {
+  --   'VonHeikemen/lsp-zero.nvim',
+  --   branch = 'v2.x',
+  --   dependencies = {
+  --     -- LSP Support
+  --     { 'neovim/nvim-lspconfig' }, -- Required
+  --     {                            -- Optional
+  --       'williamboman/mason.nvim',
+  --       build = function()
+  --         pcall(vim.cmd, 'MasonUpdate')
+  --       end,
+  --     },
+  --     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+  --
+  --     -- Autocompletion
+  --     { 'hrsh7th/nvim-cmp' },     -- Required
+  --     { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+  --     { 'L3MON4D3/LuaSnip' },     -- Required
+  --   }
+  -- },
 
   {
     'akinsho/flutter-tools.nvim',
@@ -98,5 +98,19 @@ require("lazy").setup({
       "folke/trouble.nvim", -- optional
       "nvim-telescope/telescope.nvim"
     }
-  }
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
+
+  -- Autocompletion
+  { 'hrsh7th/nvim-cmp' },     -- Required
+  { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+  { 'L3MON4D3/LuaSnip' },     -- Required
+  { 'saadparwaiz1/cmp_luasnip' }
 })
