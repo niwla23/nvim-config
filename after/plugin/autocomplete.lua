@@ -50,13 +50,13 @@ cmp.setup.cmdline(':', {
 })
 
 -- LuaSnip specific keymaps (for jumping in snippets)
-vim.keymap.set({"i", "s"}, "<C-k>", function()
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
   if luasnip.expand_or_jumpable() then
     luasnip.expand_or_jump()
   end
 end, { silent = true })
 
-vim.keymap.set({"i", "s"}, "<C-j>", function()
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
   if luasnip.jumpable(-1) then
     luasnip.jump(-1)
   end
@@ -64,6 +64,7 @@ end, { silent = true })
 
 -- Load VSCode-style snippets
 -- This loads all VSCode snippets from your runtime path, useful if you have custom ones
-vim.keymap.set("n", "<leader>s", "<cmd>lua require('luasnip.loaders.from_vscode').lazy_load()<CR>", { desc = "Load VSCode Snippets" })
+vim.keymap.set("n", "<leader>s", "<cmd>lua require('luasnip.loaders.from_vscode').lazy_load()<CR>",
+  { desc = "Load VSCode Snippets" })
 -- You can also load them on startup if you prefer:
 -- require("luasnip.loaders.from_vscode").lazy_load()

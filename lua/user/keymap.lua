@@ -39,6 +39,8 @@ vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 
 -- Show hover documentation
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+vim.keymap.set("n", "<F3>", vim.diagnostic.open_float, opts)
+-- vim.diagnostic.open_float(nil, {focus=false})
 
 -- Show signature help (for function arguments)
 vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
@@ -47,12 +49,12 @@ vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
 
 -- Code actions
-vim.keymap.set({"n", "v"}, "<F4>", vim.lsp.buf.code_action, opts)
+vim.keymap.set({ "n", "v" }, "<F4>", vim.lsp.buf.code_action, opts)
 
 -- Format buffer (using all active servers with formatting capabilities)
 -- You might want to make this async for larger files.
 -- For a visual selection, `vim.lsp.buf.format()` defaults to the selection.
-vim.keymap.set({"n", "v"}, "<F3>", function()
+vim.keymap.set({ "n", "v" }, "<F5>", function()
   vim.lsp.buf.format({ async = true })
 end, opts)
 
