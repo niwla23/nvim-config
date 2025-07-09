@@ -37,7 +37,6 @@ require("lazy").setup({
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   { 'ThePrimeagen/harpoon', dependencies = { 'nvim-lua/plenary.nvim' } },
-  -- { 'startup-nvim/startup.nvim', dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } },
   "prichrd/netrw.nvim",
   "tpope/vim-fugitive",
   "ThePrimeagen/vim-be-good",
@@ -47,28 +46,6 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
-
-  -- {
-  --   'VonHeikemen/lsp-zero.nvim',
-  --   branch = 'v2.x',
-  --   dependencies = {
-  --     -- LSP Support
-  --     { 'neovim/nvim-lspconfig' }, -- Required
-  --     {                            -- Optional
-  --       'williamboman/mason.nvim',
-  --       build = function()
-  --         pcall(vim.cmd, 'MasonUpdate')
-  --       end,
-  --     },
-  --     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-  --
-  --     -- Autocompletion
-  --     { 'hrsh7th/nvim-cmp' },     -- Required
-  --     { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-  --     { 'L3MON4D3/LuaSnip' },     -- Required
-  --   }
-  -- },
-
   {
     'akinsho/flutter-tools.nvim',
     lazy = false,
@@ -81,23 +58,6 @@ require("lazy").setup({
   {
     'dccsillag/magma-nvim',
     build = ":UpdateRemotePlugins"
-  },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup({
-        openai_params = {
-          model = "gpt-4o"
-        }
-      })
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim", -- optional
-      "nvim-telescope/telescope.nvim"
-    }
   },
   {
     "mason-org/mason-lspconfig.nvim",
@@ -127,5 +87,6 @@ require("lazy").setup({
       { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
-  }
+  },
+  { 'lambdalisue/vim-suda' }
 })
