@@ -26,6 +26,7 @@ require("lazy").setup({
   "MunifTanjim/prettier.nvim",
   "nvim-tree/nvim-tree.lua",
   "RRethy/vim-illuminate",
+  "m4xshen/autoclose.nvim",
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
